@@ -27,13 +27,11 @@ export const useWalletStore = create<WalletStoreState>((set) => ({
       const pubKey = await StellarService.connectWallet();
       set({ publicKey: pubKey, isConnected: true, isConnecting: false });
     } catch (err: any) {
-      // Demo mock fallback if extension unavailable
-      const mockKey = 'GC7K8X9Y0Z1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P';
       set({
-        publicKey: mockKey,
-        isConnected: true,
+        publicKey: null,
+        isConnected: false,
         isConnecting: false,
-        error: null,
+        error: err.message || 'Failed to connect wallet',
       });
     }
   },
