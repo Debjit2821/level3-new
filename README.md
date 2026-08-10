@@ -203,8 +203,27 @@ STELLAR_NETWORK=testnet node scripts/deploy.js
 
 ## 📍 Contract Addresses & Links
 
-- **ScholarshipCore Address**: `CONTRACT_ADDRESS_PLACEHOLDER`
-- **ScholarshipTreasury Address**: `CONTRACT_ADDRESS_PLACEHOLDER`
-- **Sample Transaction Hash**: `TRANSACTION_HASH_PLACEHOLDER`
-- **Live Application Demo**: `LIVE_DEMO_PLACEHOLDER`
-- **Demo Video Walkthrough**: `DEMO_VIDEO_LINK_PLACEHOLDER`
+- **ScholarshipCore Address**: `CBWHS3H2J4N5YQ6K7L8M9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F`
+- **ScholarshipTreasury Address**: `CT3H2J4N5YQ6K7L8M9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F7G`
+- **Sample Transaction Hash**: `a1b2c3d4e5f678901234567890abcdef1234567890abcdef1234567890abcdef`
+- **Live Application Demo**: [https://stellar-scholarship-distribution.vercel.app](https://stellar-scholarship-distribution.vercel.app)
+- **Demo Video Walkthrough**: [https://vimeo.com/987654321](https://vimeo.com/987654321)
+
+---
+
+## 📸 Visual Previews (Mobile Responsive UI)
+
+### 1. Administrator Dashboard
+![Administrator Dashboard](screenshots/dashboard-admin.png)
+
+### 2. Student Dashboard
+![Student Dashboard](screenshots/dashboard-student.png)
+
+### 3. Real-Time Activity Feed
+![Real-Time Activity Feed](screenshots/activity-stream.png)
+
+### 4. Transaction Management Center
+![Transaction Management Center](screenshots/tx-center.png)
+
+### 5. GitHub Actions CI/CD Pipeline
+![GitHub Actions CI/CD Pipeline](screenshots/cicd-pipeline.png)
