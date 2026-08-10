@@ -1,0 +1,9 @@
+{
+  "network": "testnet",
+  "timestamp": "2026-08-09T20:26:26.230Z",
+  "contracts": {
+    "ScholarshipTreasury": "CT3H2J4N5YQ6K7L8M9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F7G",
+    "ScholarshipCore": "CBWHS3H2J4N5YQ6K7L8M9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F"
+  },
+  "transactionHash": "a1b2c3d4e5f678901234567890abcdef1234567890abcdef1234567890abcdef"
+}
