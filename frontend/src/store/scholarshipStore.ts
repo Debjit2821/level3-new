@@ -186,7 +186,7 @@ export const useScholarshipStore = create<ScholarshipStoreState>((set, get) => (
     if (!prog) throw new Error('Program not found');
 
     const newPaidCount = app.paidMilestones + 1;
-    const isCompleted = newPaidCount >= prog.milestone_count;
+    const isCompleted = newPaidCount >= prog.milestoneCount;
     const payoutAmount = prog.amountPerMilestone;
 
     set((state) => ({

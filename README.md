@@ -9,7 +9,7 @@ This DApp enables universities and organization administrators to register schol
 ## 🔗 Project Links
 
 * **GitHub Repository**: [stellar-scholarship/scholarship-dapp](https://github.com/stellar-scholarship/scholarship-dapp)
-* **Live Demo**: [StellarScholar Production App](https://stellar-scholarship-distribution.vercel.app/)
+* **Live Demo**: [StellarScholar Production App](https://frontend-eosin-six-66.vercel.app/)
 * **Demo Video**: [DEMO](https://vimeo.com/987654321)
 
 ---
