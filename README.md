@@ -37,11 +37,11 @@ This DApp enables universities and organization administrators to register schol
 ![Wallet Options](frontend/public/wallet_modal.png)
 
 ### 6. CI/CD Pipeline Verification
-![ci/cd](frontend/public/screenshots/Screenshot 2026-06-24 151656.png)
+![ci/cd](frontend/public/screenshots/cicd_pipeline.png)
 
 ### 7. Test Output
 *Test output with 3+ passing tests*
-![test output](frontend/public/screenshots/Screenshot 2026-06-24 154016.png)
+![test output](frontend/public/screenshots/test_output.png)
 
 ---
 
