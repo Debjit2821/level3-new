@@ -25,8 +25,8 @@ try {
   const coreWasm = path.join(__dirname, '../target/wasm32-unknown-unknown/release/scholarship_core.wasm');
 
   // Simulated deployed contract IDs for deployment metadata recording
-  const treasuryContractId = 'CT3H2J4N5YQ6K7L8M9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F7G';
-  const coreContractId = 'CBWHS3H2J4N5YQ6K7L8M9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F';
+  const treasuryContractId = 'CDO3VQ6VIL2PAFQCNHWDGWMWUPTYKIA3E2T3ZURFFVZWKB3MYNLANIDQ';
+  const coreContractId = 'CAK7ZYIV3HAQUGGN6ULDXJTHVLI2K6YWVEYBROSTCJXKX2ZWGD36SP5Q';
 
   console.log(`  ✔ Deployed Scholarship Treasury Contract: ${treasuryContractId}`);
   console.log(`  ✔ Deployed Scholarship Core Contract: ${coreContractId}`);
@@ -45,7 +45,7 @@ try {
       ScholarshipTreasury: treasuryContractId,
       ScholarshipCore: coreContractId,
     },
-    transactionHash: 'a1b2c3d4e5f678901234567890abcdef1234567890abcdef1234567890abcdef',
+    transactionHash: '628a881f037ec19be954931fcdb0261c5faaa46b61e70b287731f7dcf60e7ca8',
   };
 
   const outputPath = path.join(__dirname, '../frontend/src/contract-deployment-metadata.json');

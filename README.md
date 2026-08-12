@@ -47,12 +47,12 @@ This DApp enables universities and organization administrators to register schol
 
 ## ⛓ Deployed Addresses (Stellar Testnet)
 
-* **Scholarship Core Contract Address**: `CBWHS3H2J4N5YQ6K7L8M9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F` (referred to as `CORE_CONTRACT` in config)
-* **Scholarship Treasury Contract Address**: `CT3H2J4N5YQ6K7L8M9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F7G` (referred to as `TREASURY_CONTRACT` in config)
+* **Scholarship Core Contract Address**: `CAK7ZYIV3HAQUGGN6ULDXJTHVLI2K6YWVEYBROSTCJXKX2ZWGD36SP5Q` (referred to as `CORE_CONTRACT` in config)
+* **Scholarship Treasury Contract Address**: `CDO3VQ6VIL2PAFQCNHWDGWMWUPTYKIA3E2T3ZURFFVZWKB3MYNLANIDQ` (referred to as `TREASURY_CONTRACT` in config)
 * **XLM SAC Token Address**: `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC` (referred to as `TOKEN_CONTRACT` in config)
-* **Deployer Address**: `GDT37UGSKAIKDUGC73VHAI6HASL27O5YTCHONKRIIH7AJBMBIQPWRVX3`
-* **Example Contract Deployment Tx**: `a1b2c3d4e5f678901234567890abcdef1234567890abcdef1234567890abcdef` (referred to as `TRANSACTION_HASH_HERE` in config)
-* **Explorer Link**: [Stellar Expert Explorer](https://stellar.expert/explorer/testnet/tx/a1b2c3d4e5f678901234567890abcdef1234567890abcdef1234567890abcdef)
+* **Deployer Address**: `GB74IQB2ON6R7M4Q72MYHFACGZRVHYMDJ6VQF7C73J7LOCRASBNJIHKA`
+* **Example Contract Deployment Tx**: `628a881f037ec19be954931fcdb0261c5faaa46b61e70b287731f7dcf60e7ca8` (referred to as `TRANSACTION_HASH_HERE` in config)
+* **Explorer Link**: [Stellar Expert Explorer](https://stellar.expert/explorer/testnet/tx/628a881f037ec19be954931fcdb0261c5faaa46b61e70b287731f7dcf60e7ca8)
 
 ---
 

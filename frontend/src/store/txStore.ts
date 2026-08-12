@@ -19,17 +19,17 @@ export const useTxStore = create<TxStoreState>((set, get) => ({
   transactions: [
     {
       id: 'tx-init-1',
-      hash: 'a1b2c3d4e5f678901234567890abcdef1234567890abcdef1234567890abcdef',
+      hash: '43bde87e6905fd0e9671a621da3eb4a42dbe8700af615dc0368475b50d2b3265',
       operation: 'Initialize Treasury Contract',
-      contract: 'ScholarshipTreasury (CT3H...F7G)',
+      contract: 'ScholarshipTreasury (CDO3...NIDQ)',
       status: 'confirmed',
       timestamp: new Date(Date.now() - 3600000).toLocaleTimeString(),
     },
     {
       id: 'tx-init-2',
-      hash: 'b2c3d4e5f678901234567890abcdef1234567890abcdef1234567890abcdef12',
+      hash: '215508503a244dcb562a5c7df864a5383498423a6352b0357fb4001c5acdaa30',
       operation: 'Initialize Core Contract',
-      contract: 'ScholarshipCore (CBWH...E6F)',
+      contract: 'ScholarshipCore (CAK7...SP5Q)',
       status: 'confirmed',
       timestamp: new Date(Date.now() - 3000000).toLocaleTimeString(),
     },
