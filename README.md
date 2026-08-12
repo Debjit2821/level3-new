@@ -8,7 +8,7 @@ This DApp enables universities and organization administrators to register schol
 
 ## 🔗 Project Links
 
-* **GitHub Repository**: [Debjit2821/scholarship-distribution-system](https://github.com/Debjit2821/scholarship-distribution-system)
+* **GitHub Repository**: [Debjit2821/scholarship-distribution-system](https://github.com/Debjit2821/level3-new)
 * **Live Demo**: [StellarScholar Production App](https://scholarship-distribution-system.vercel.app/)
 * **Demo Video**: [DEMO](https://youtu.be/uWyL1XPK3Yk)
 
