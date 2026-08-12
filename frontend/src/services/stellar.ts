@@ -1,7 +1,12 @@
 import { logger } from './logger';
 import { NetworkType } from '../types';
-import { signTransaction } from '@stellar/freighter-api';
-import { rpc, Contract, TransactionBuilder, Account, Address, nativeToScVal } from '@stellar/stellar-sdk';
+import { rpc, Contract, TransactionBuilder, Account } from '@stellar/stellar-sdk';
+import { StellarWalletsKit, Networks } from '@creit.tech/stellar-wallets-kit';
+import { FreighterModule } from '@creit.tech/stellar-wallets-kit/modules/freighter';
+import { AlbedoModule } from '@creit.tech/stellar-wallets-kit/modules/albedo';
+import { xBullModule } from '@creit.tech/stellar-wallets-kit/modules/xbull';
+import { RabetModule } from '@creit.tech/stellar-wallets-kit/modules/rabet';
+import { HanaModule } from '@creit.tech/stellar-wallets-kit/modules/hana';
 
 export const CONTRACT_ADDRESSES = {
   testnet: {
@@ -29,32 +34,41 @@ export interface WalletState {
 }
 
 export class StellarService {
-  public static async isFreighterAvailable(): Promise<boolean> {
+  private static kitInitialized = false;
+
+  public static initializeKit() {
+    if (this.kitInitialized || typeof window === 'undefined') return;
     try {
-      const freighter = await import('@stellar/freighter-api');
-      const res: any = await freighter.isConnected();
-      return !!(typeof res === 'boolean' ? res : res?.isConnected);
-    } catch {
-      return false;
+      StellarWalletsKit.init({
+        modules: [
+          new FreighterModule(),
+          new AlbedoModule(),
+          new xBullModule(),
+          new RabetModule(),
+          new HanaModule(),
+        ],
+        network: Networks.TESTNET,
+        authModal: {
+          showInstallLabel: true,
+          hideUnsupportedWallets: false,
+        }
+      });
+      this.kitInitialized = true;
+      logger.info('StellarWalletsKit initialized successfully');
+    } catch (err: any) {
+      logger.error('Failed to initialize StellarWalletsKit', { error: err.message });
     }
   }
 
   public static async connectWallet(): Promise<string> {
-    logger.info('Attempting wallet connection...');
+    logger.info('Attempting wallet connection via StellarWalletsKit...');
     try {
-      const freighter = await import('@stellar/freighter-api');
-      const isConnectedRes: any = await freighter.isConnected();
-      const isConnected = !!(typeof isConnectedRes === 'boolean' ? isConnectedRes : isConnectedRes?.isConnected);
-      if (!isConnected) {
-        throw new Error('Freighter extension is not installed or locked.');
-      }
-      const getKeyFn = (freighter as any).getPublicKey || (freighter as any).getAddress;
-      const resKey = await getKeyFn();
-      const publicKey = typeof resKey === 'string' ? resKey : resKey?.address || resKey?.publicKey;
-      logger.info('Wallet connected successfully', { publicKey });
-      return publicKey;
+      this.initializeKit();
+      const res = await StellarWalletsKit.authModal();
+      logger.info('Wallet connected successfully via kit', { publicKey: res.address });
+      return res.address;
     } catch (err: any) {
-      logger.error('Wallet connection failed', { error: err.message });
+      logger.error('Wallet connection failed', { error: err.message || err });
       throw new Error(err.message || 'Failed to connect wallet');
     }
   }
@@ -111,19 +125,22 @@ export class StellarService {
     // 4. Assemble simulation results
     const finalTx = rpc.assembleTransaction(tx, simulated);
 
-    // 5. Sign via Freighter
+    // 5. Sign via StellarWalletsKit
+    this.initializeKit();
     let signedXdr;
     try {
-      signedXdr = await signTransaction((finalTx as any).toXDR(), {
+      const signRes = await StellarWalletsKit.signTransaction((finalTx as any).toXDR(), {
         networkPassphrase: NETWORK_PASSPHRASE,
+        address: sourceAddress,
       });
+      signedXdr = signRes.signedTxXdr;
     } catch (err: any) {
       throw new Error(`Wallet signing canceled or failed: ${err.message || err}`);
     }
 
     // 6. Submit signed transaction
     const submission = await server.sendTransaction(
-      TransactionBuilder.fromXDR(signedXdr.signedTxXdr, NETWORK_PASSPHRASE)
+      TransactionBuilder.fromXDR(signedXdr, NETWORK_PASSPHRASE)
     );
 
     if (submission.status === 'ERROR') {
