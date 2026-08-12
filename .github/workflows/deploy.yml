@@ -16,12 +16,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
           cache-dependency-path: frontend/package.json
 
       - name: Install Dependencies
-        run: cd frontend && npm ci
+        run: cd frontend && npm install
 
       - name: Run Test Suite
         run: cd frontend && npm run test
